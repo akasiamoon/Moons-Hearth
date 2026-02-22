@@ -38,7 +38,7 @@ body {
 /* 4. Positioning the Hologram Hitbox */
 #astrolabe-weather {
     top: 40%;      /* Moves it down to the desk */
-    left: 39%;     /* Centers it over the hologram */
+    left: 43%;     /* Centers it over the hologram */
     width: 12%;    /* Makes it wide enough for the circle */
     height: 18%;   /* Makes it tall enough for the rings */
     border-radius: 50%; 

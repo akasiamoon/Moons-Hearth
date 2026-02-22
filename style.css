@@ -20,7 +20,7 @@ body {
     width: 100vw;
     max-width: 1920px; 
     aspect-ratio: 4 / 3; /* Locks the proportions so hitboxes don't slide around! */
-    background-image: url('assets/moonshearthfinal.jpg'); /* Make sure this matches your image name exactly! */
+    background-image: url('assets/Moonshearthfinal.jpg'); /* Make sure this matches your image name exactly! */
     background-size: cover;
     background-position: center;
     box-shadow: 0 0 50px rgba(0,0,0,0.8); 

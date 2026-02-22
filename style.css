@@ -35,15 +35,14 @@ body {
     z-index: 10;                      /* Keeps buttons on top of the image */
 }
 
-/* 4. Positioning the Astrolabe Hitbox */
+/* 4. Positioning the Hologram Hitbox */
 #astrolabe-weather {
-    /* These percentages map to X and Y coordinates on the image */
-    top: 55%; 
-    left: 56%;
-    width: 7%;
-    height: 10%;
-    border-radius: 50%; /* Makes the hitbox a circle to fit the globe! */
-    transition: all 0.3s ease; /* Smooth animation for the hover */
+    top: 58%;      /* Moves it down to the desk */
+    left: 51%;     /* Centers it over the hologram */
+    width: 12%;    /* Makes it wide enough for the circle */
+    height: 18%;   /* Makes it tall enough for the rings */
+    border-radius: 50%; 
+    transition: all 0.3s ease; 
 }
 
 /* 5. What happens when you hover your mouse over it */

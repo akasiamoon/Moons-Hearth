@@ -1,0 +1,53 @@
+/* 1. Reset the browser defaults so our app goes edge-to-edge */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #050505; /* Dark background behind the app */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Takes up 100% of the screen height */
+    overflow: hidden; /* Hides annoying scrollbars */
+}
+
+/* 2. The Main Scene Canvas */
+.scene-container {
+    position: relative;
+    width: 100vw;
+    max-width: 1920px; 
+    aspect-ratio: 4 / 3; /* Locks the proportions so hitboxes don't slide around! */
+    background-image: url('assets/moons-hearth-base.jpg'); /* Make sure this matches your image name exactly! */
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 50px rgba(0,0,0,0.8); 
+}
+
+/* 3. The Developer Hitbox Style (Applies to all buttons) */
+.invisible-ui {
+    position: absolute;
+    background-color: rgba(0, 255, 255, 0.3); /* Semi-transparent cyan so we can see it */
+    border: 2px solid cyan;           
+    cursor: pointer;                  /* Turns the mouse into a hand */
+    z-index: 10;                      /* Keeps buttons on top of the image */
+}
+
+/* 4. Positioning the Astrolabe Hitbox */
+#astrolabe-weather {
+    /* These percentages map to X and Y coordinates on the image */
+    top: 55%; 
+    left: 56%;
+    width: 7%;
+    height: 10%;
+    border-radius: 50%; /* Makes the hitbox a circle to fit the globe! */
+    transition: all 0.3s ease; /* Smooth animation for the hover */
+}
+
+/* 5. What happens when you hover your mouse over it */
+#astrolabe-weather:hover {
+    background-color: rgba(0, 255, 255, 0.6); /* Glows brighter when hovered */
+    box-shadow: 0 0 15px cyan;
+}

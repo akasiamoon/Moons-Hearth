@@ -1,4 +1,4 @@
-/* 1. Reset the browser defaults so our app goes edge-to-edge */
+/* 1. Reset the browser */
 * {
     margin: 0;
     padding: 0;
@@ -6,47 +6,80 @@
 }
 
 body {
-    background-color: #050505; /* Dark background behind the app */
+    background-color: #050505; /* Deep black background for the edges */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Takes up 100% of the screen height */
-    overflow: hidden; /* Hides annoying scrollbars */
+    justify-content: center; /* Centers the room horizontally */
+    align-items: center;     /* Centers the room vertically */
+    height: 100vh; 
+    width: 100vw;
+    overflow: hidden; 
 }
 
-/* 2. The Main Scene Canvas */
+/* 2. THE MAGIC FIX: The Aspect-Ratio Lock */
 .scene-container {
     position: relative;
-    width: 100vw;
-    height: 100vh; /* Takes up the full height of your screen */
+    aspect-ratio: 1 / 1; /* Forces the box to perfectly match your square image */
+    max-height: 100vh;   /* Ensures it never grows taller than your screen */
+    max-width: 100vw;    /* Ensures it never grows wider than your screen */
     background-image: url('assets/Moonshearthfinal.jpg'); 
-    background-size: contain; /* Locks the image so it NEVER crops! */
+    background-size: 100% 100%; /* Stretches the image strictly to the locked box edges */
     background-position: center;
-    background-repeat: no-repeat; /* Stops it from tiling like wallpaper */
-    box-shadow: 0 0 50px rgba(0,0,0,0.8); 
+    background-repeat: no-repeat;
+    box-shadow: 0 0 50px rgba(0,0,0,1); /* Adds a cool shadow around the room */
 }
 
-/* 3. The Developer Hitbox Style (Applies to all buttons) */
+/* 3. Developer Mode: Cyan Hitboxes */
+/* (We will change this to transparent later!) */
 .invisible-ui {
     position: absolute;
-    background-color: rgba(0, 255, 255, 0.3); /* Semi-transparent cyan so we can see it */
+    background-color: rgba(0, 255, 255, 0.3); 
     border: 2px solid cyan;           
-    cursor: pointer;                  /* Turns the mouse into a hand */
-    z-index: 10;                      /* Keeps buttons on top of the image */
+    cursor: pointer;                  
+    z-index: 10;                      
+    transition: all 0.2s ease;
 }
 
-/* 4. Positioning the Hologram Hitbox */
-#astrolabe-weather {
-    top: 50%;      /* Moves it down to the desk */
-    left: 50%;     /* Centers it over the hologram */
-    width: 12%;    /* Makes it wide enough for the circle */
-    height: 18%;   /* Makes it tall enough for the rings */
-    border-radius: 50%; 
-    transition: all 0.3s ease; 
-}
-
-/* 5. What happens when you hover your mouse over it */
-#astrolabe-weather:hover {
-    background-color: rgba(0, 255, 255, 0.6); /* Glows brighter when hovered */
+.invisible-ui:hover {
+    background-color: rgba(0, 255, 255, 0.6); 
     box-shadow: 0 0 15px cyan;
+}
+
+/* =========================================
+   4. THE HITBOX COORDINATES
+   ========================================= */
+
+/* The Glowing Hologram on Desk */
+#astrolabe-weather {
+    top: 54%; 
+    left: 42.5%;
+    width: 14%;
+    height: 14%;
+    border-radius: 50%; 
+}
+
+/* The Open Book on Desk */
+#desk-scratchpad {
+    top: 68%;
+    left: 60%;
+    width: 15%;
+    height: 6%;
+    border-radius: 10px;
+}
+
+/* The Glowing Runes on the Fireplace Mantle */
+#mantle-clock {
+    top: 44%;
+    left: 0%;
+    width: 39%;
+    height: 4.5%;
+    border-radius: 5px;
+}
+
+/* The Giant Arched Window */
+#window-transitions {
+    top: 8%;
+    left: 33%;
+    width: 32%;
+    height: 45%;
+    border-radius: 50% 50% 0 0; /* Arches the top nicely */
 }

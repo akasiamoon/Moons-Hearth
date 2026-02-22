@@ -18,14 +18,13 @@ body {
 /* 2. THE MAGIC FIX: The Aspect-Ratio Lock */
 .scene-container {
     position: relative;
-    aspect-ratio: 1 / 1; /* Forces the box to perfectly match your square image */
-    max-height: 100vh;   /* Ensures it never grows taller than your screen */
-    max-width: 100vw;    /* Ensures it never grows wider than your screen */
+    width: 100vmin;  /* Forces the width to fill the screen */
+    height: 100vmin; /* Forces the height to match the width perfectly */
     background-image: url('assets/Moonshearthfinal.jpg'); 
-    background-size: 100% 100%; /* Stretches the image strictly to the locked box edges */
+    background-size: 100% 100%; 
     background-position: center;
     background-repeat: no-repeat;
-    box-shadow: 0 0 50px rgba(0,0,0,1); /* Adds a cool shadow around the room */
+    box-shadow: 0 0 50px rgba(0,0,0,1); 
 }
 
 /* 3. Developer Mode: Cyan Hitboxes */
